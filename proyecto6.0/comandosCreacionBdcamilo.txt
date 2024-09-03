@@ -1,0 +1,30 @@
+CREATE TABLE `pedidos` (
+  `id_pedido` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `productos` varchar(255) NOT NULL,
+  `valor_total` decimal(10,2) NOT NULL,
+  `fecha_pedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- --------------------------------------------------------
+
+-- Table structure for table `productos`
+--
+
+CREATE TABLE `productos` (
+  `ID_Producto` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `Nombre_P` varchar(30) DEFAULT NULL,
+  `Precio_P` int(10) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `descripcion` varchar(100) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+);
+
+
+---------------------------------------------------------- 
+-------------------------- Insertar para tener productos en el catalogo de muestra -------------------------------
+INSERT INTO `productos` (`ID_Producto`, `Nombre_P`, `Precio_P`, `Cantidad`, `descripcion`, `image`) VALUES
+(140, 'peinilla', 15000, 27, 'Peinilla para mascotas de gran caluidad y cuidado con el peleja por sus hebras.', '..\\assets\\camilo\\Pictures\\nuevas\\peinilla.jpg'),
+(142, 'Hueso ahumado', 10000, 12, 'Manten tu perro entretenido con un rico perone ahumado extra duradero y extra delicioso. ', '..\\assets\\camilo\\Pictures\\nuevas\\perone_ahumado.png'),
+(143, 'Remov-Pelos', 21000, 21, 'manten tu casa libre de exceso de pelaje con el removedor extra util y manten limpio todo.', '..\\assets\\camilo\\Pictures\\nuevas\\removedor_pelos.webp');
+
+
